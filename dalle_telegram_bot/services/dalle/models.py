@@ -14,10 +14,7 @@ class DalleResponse(pydantic.BaseModel):
 
     @property
     def images_bytes(self):
-        images_parsed: List[bytes] = list()
-        for image_base64 in self.images:
-            images_parsed.append(base64.b64decode(image_base64))
-        return images_parsed
+        return [base64.b64decode(image_base64) for image_base64 in self.images]
 
     def save_images(self, directory: str):
         directory_path = pathlib.Path(directory)
