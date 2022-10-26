@@ -14,8 +14,8 @@ from ...logger import logger
 class TelegramBotAPIRequester:
     def __init__(self, settings: Settings):
         self._settings = settings
-        self._sessions: Dict[str, requests.Session] = dict()
-        self._sessions_last_timestamp: Dict[str, float] = dict()
+        self._sessions: Dict[str, requests.Session] = {}
+        self._sessions_last_timestamp: Dict[str, float] = {}
         self._sessions_lock = threading.Lock()
         self._cleanup_thread = None
 

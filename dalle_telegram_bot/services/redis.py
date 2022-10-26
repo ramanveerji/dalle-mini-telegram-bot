@@ -32,7 +32,7 @@ class Redis(AbstractLogger):
             pass
 
     def _get_auth_kwargs(self):
-        kwargs = dict()
+        kwargs = {}
         if self._settings.redis_username:
             kwargs["username"] = self._settings.redis_username
         if self._settings.redis_password:
